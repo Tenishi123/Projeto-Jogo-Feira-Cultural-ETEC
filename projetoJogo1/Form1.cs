@@ -31,10 +31,10 @@ namespace projetoJogo1
             else if(Tempo == 101)
             {
 
-                Tempo++;
-                Hide();
                 Apresentacao apresentacao = new Apresentacao();
+                Tempo++;
                 apresentacao.ShowDialog();
+                Hide();
 
             }
             else
@@ -45,6 +45,11 @@ namespace projetoJogo1
             }
 
             Tempo++;
+
+        }
+
+        private void Form_Principal_Load(object sender, EventArgs e)
+        {
 
         }
     }

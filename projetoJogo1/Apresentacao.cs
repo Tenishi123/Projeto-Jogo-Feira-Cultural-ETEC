@@ -28,14 +28,14 @@ namespace projetoJogo1
             if (estadoDaJanela == 1)
             {
 
-                lblMengsApresentacao.Text = "Este jogo se trata de ensinar como a internet funciona, \ncomo os computadores se conectam.";
+                lblMengsApresentacao.Text = "O jogo a seguir irá ensinar como a internet funciona e \ncomo os computadores se conectam.";
                 btnAnApresentacao.Visible = true;
 
             }
             else if(estadoDaJanela == 2)
             {
 
-                lblMengsApresentacao.Text = "Muito bem, vamos ver se você descobre o caminho mais rapido \npara enviar o pacote ao servidor.";
+                lblMengsApresentacao.Text = "Muito bem, vamos ver se você descobre o caminho mais rapido \npara enviar o pacote do servidor ao usuario!\n";
 
             }else if(estadoDaJanela == 3)
             {

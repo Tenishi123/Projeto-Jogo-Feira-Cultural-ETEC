@@ -35,6 +35,8 @@ namespace projetoJogo1
 
             Score = parScore;
 
+            Score *= fase;
+
         }
 
         public int setFase()

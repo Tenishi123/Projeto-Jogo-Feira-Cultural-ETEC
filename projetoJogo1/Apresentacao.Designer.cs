@@ -36,14 +36,17 @@
             // btnProApresentacao
             // 
             this.btnProApresentacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProApresentacao.BackColor = System.Drawing.SystemColors.MenuText;
             this.btnProApresentacao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnProApresentacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProApresentacao.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProApresentacao.ForeColor = System.Drawing.Color.Lime;
             this.btnProApresentacao.Location = new System.Drawing.Point(661, 426);
             this.btnProApresentacao.Name = "btnProApresentacao";
             this.btnProApresentacao.Size = new System.Drawing.Size(232, 56);
             this.btnProApresentacao.TabIndex = 0;
             this.btnProApresentacao.Text = "Proximo";
-            this.btnProApresentacao.UseVisualStyleBackColor = true;
+            this.btnProApresentacao.UseVisualStyleBackColor = false;
             this.btnProApresentacao.Click += new System.EventHandler(this.BtnProApresentacao_Click);
             // 
             // btnAnApresentacao
@@ -51,6 +54,8 @@
             this.btnAnApresentacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAnApresentacao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAnApresentacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnApresentacao.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnApresentacao.ForeColor = System.Drawing.Color.Red;
             this.btnAnApresentacao.Location = new System.Drawing.Point(12, 426);
             this.btnAnApresentacao.Name = "btnAnApresentacao";
             this.btnAnApresentacao.Size = new System.Drawing.Size(232, 56);
@@ -63,17 +68,21 @@
             // lblMengsApresentacao
             // 
             this.lblMengsApresentacao.AutoSize = true;
-            this.lblMengsApresentacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMengsApresentacao.Location = new System.Drawing.Point(12, 47);
+            this.lblMengsApresentacao.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblMengsApresentacao.Font = new System.Drawing.Font("OCR-A BT", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMengsApresentacao.ForeColor = System.Drawing.Color.Lime;
+            this.lblMengsApresentacao.Location = new System.Drawing.Point(145, 182);
             this.lblMengsApresentacao.Name = "lblMengsApresentacao";
-            this.lblMengsApresentacao.Size = new System.Drawing.Size(546, 51);
+            this.lblMengsApresentacao.Size = new System.Drawing.Size(622, 47);
             this.lblMengsApresentacao.TabIndex = 2;
             this.lblMengsApresentacao.Text = "Bem vindo ao Jogo da NET";
+            this.lblMengsApresentacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Apresentacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InfoText;
             this.ClientSize = new System.Drawing.Size(905, 516);
             this.Controls.Add(this.lblMengsApresentacao);
             this.Controls.Add(this.btnAnApresentacao);

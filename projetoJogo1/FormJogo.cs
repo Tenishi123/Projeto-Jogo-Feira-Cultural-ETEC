@@ -27,7 +27,12 @@ namespace projetoJogo1
         AfricaCentral africaCentral = new AfricaCentral();
         AfricaSul africaSul = new AfricaSul();
         India india = new India();
+        EuropaOeste europaOeste = new EuropaOeste();
+        EuropaLeste europaLeste = new EuropaLeste();
         Usuario usuario = new Usuario();
+        Random rand = new Random();
+        int erros = 0;
+
 
         public FormJogo()
         {
@@ -37,6 +42,62 @@ namespace projetoJogo1
         /***
         * minhas funções
          ***/
+
+        private void caminhoErrado()
+        {
+
+            int numRand = rand.Next(1,4);
+
+            if (numRand == 1) {
+
+                MessageBox.Show("Caminho errado");
+                Score -= 10;
+            
+            }else if(numRand == 2)
+            {
+
+                MessageBox.Show("Escolha o caminho certo !!!");
+                Score -= 10;
+
+            }else if (numRand == 3)
+            {
+
+                MessageBox.Show("Escolha outro caminho");
+
+            }
+            else
+            {
+
+                MessageBox.Show("Error");
+
+            }
+
+            erros++;
+
+            if(erros == 4 || erros == 7)
+            {
+
+                if(usuario.setFase() == 1)
+                {
+
+                    MessageBox.Show("Clique nos pontos até chegar no computador");
+
+                }else if(usuario.setFase() == 2)
+                {
+
+                    MessageBox.Show("Clique nos pontos até chegar no servidor 2 e depois para o computador");
+
+                }
+
+            }else if(erros == 10)
+            {
+
+                MessageBox.Show("Game over");
+                Application.Exit();
+
+            }
+
+        }
 
         private void reset()// reseta todos os pontos para proxima fase
         {
@@ -68,6 +129,8 @@ namespace projetoJogo1
             africaCentral.getCondicao(true);
             africaSul.getCondicao(true);
             india.getCondicao(true);
+            europaLeste.getCondicao(true);
+            europaOeste.getCondicao(true);
 
             saoPaulo.get_pct(pctSaoPaulo);
             bahia.get_pct(pctBahia);
@@ -82,6 +145,8 @@ namespace projetoJogo1
             africaCentral.get_pct(pctAfricaCenter);
             africaSul.get_pct(pctAfricaSul);
             india.get_pct(pctIndia);
+            europaLeste.get_pct(pctEuropaLeste);
+            europaOeste.get_pct(pctEuropaOeste);
 
             saoPaulo.mudarPonto();
             bahia.mudarPonto();
@@ -96,6 +161,8 @@ namespace projetoJogo1
             africaCentral.mudarPonto();
             africaSul.mudarPonto();
             india.mudarPonto();
+            europaOeste.mudarPonto();
+            europaLeste.mudarPonto();
 
         }
 
@@ -109,7 +176,8 @@ namespace projetoJogo1
                 pctUsuario1.Visible = false;
                 pctServidorPrincipal.Visible = true;
                 pctServidorPrincipal1.Visible = false;
-                pctServidorSecundario.Visible = false;
+                pctServidorPrincipal.Visible = false;
+                pctServidorSecundario_1.Visible = false;
 
                 reset();
 
@@ -121,7 +189,7 @@ namespace projetoJogo1
                 pctUsuario1.Visible = false;
                 pctServidorPrincipal.Visible = false;
                 pctServidorPrincipal1.Visible = true;
-                pctServidorSecundario.Visible = true;
+                pctServidorSecundario_1.Visible = true;
 
                 reset();
 
@@ -144,9 +212,13 @@ namespace projetoJogo1
                 }
                 else
                 {
-                    MessageBox.Show("Faça o caminho correto");
-                    Score -= 10;
+                    caminhoErrado();
                 }
+            }else if(usuario.setFase() == 2)
+            {
+
+                caminhoErrado();
+
             }
 
         }
@@ -160,6 +232,9 @@ namespace projetoJogo1
             usuario.getFase(1);//passa a primeira fase
 
             reset();
+
+            MensagemBox mb = new MensagemBox();
+            mb.ShowDialog();
             
         }
 
@@ -169,6 +244,12 @@ namespace projetoJogo1
             {
                 saoPaulo.mudarPonto();
                 Score += 10;
+            }
+            else if (usuario.setFase() == 2)
+            {
+
+                caminhoErrado();
+
             }
 
         }
@@ -191,14 +272,14 @@ namespace projetoJogo1
                 }
                 else
                 {
-                    MessageBox.Show("Faça o caminho correto");
-                    Score -= 10;
+                    caminhoErrado();
                 }
 
-            }else if(usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
-
+                caminhoErrado();
 
             }
         }
@@ -214,9 +295,25 @@ namespace projetoJogo1
                 }
                 else
                 {
-                    MessageBox.Show("Faça o caminho correto");
-                    Score -= 10;
+                    caminhoErrado();
                 }
+            }else if(usuario.setFase() == 2)
+            {
+
+                if (europaOeste.setCondicao() && !africaSul.setCondicao())
+                {
+
+                    usa_leste.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
+
             }
 
         }
@@ -225,6 +322,18 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
+                if (usa_leste.setCondicao() && !africaCentral.setCondicao())
+                {
+                    usa_oeste.mudarPonto();
+                    Score += 10;
+                }
+                else
+                {
+                    caminhoErrado();
+                }
+            }else if(usuario.setFase() == 2)
+            {
+
                 if (usa_leste.setCondicao())
                 {
                     usa_oeste.mudarPonto();
@@ -232,9 +341,9 @@ namespace projetoJogo1
                 }
                 else
                 {
-                    MessageBox.Show("Faça o caminho correto");
-                    Score -= 10;
+                    caminhoErrado();
                 }
+
             }
 
         }
@@ -250,9 +359,21 @@ namespace projetoJogo1
                 }
                 else
                 {
-                    MessageBox.Show("Faça o caminho correto");
-                    Score -= 10;
+                    caminhoErrado();
                 }
+            }else if(usuario.setFase() == 2)
+            {
+
+                if (usa_oeste.setCondicao())
+                {
+                    japao.mudarPonto();
+                    Score += 10;
+                }
+                else
+                {
+                    caminhoErrado();
+                }
+
             }
 
         }
@@ -268,9 +389,25 @@ namespace projetoJogo1
                 }
                 else
                 {
-                    MessageBox.Show("Faça o caminho correto");
-                    Score -= 10;
+                    caminhoErrado();
                 }
+
+            }else if( usuario.setFase() == 2)
+            {
+
+                if (india.setCondicao() || japao.setCondicao())
+                {
+                    MessageBox.Show("Agora envie para o usuario agora");
+                    reset();
+                    china.mudarPonto();
+
+                }else
+                {
+
+                    caminhoErrado();
+
+                }
+
             }
 
         }
@@ -279,16 +416,32 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
-                if (china.setCondicao())
+                if (china.setCondicao() || india.setCondicao())
                 {
                     tailandia.mudarPonto();
                     Score += 10;
                 }
                 else
                 {
-                    MessageBox.Show("Faça o caminho correto");
-                    Score -= 10;
+                    caminhoErrado();
                 }
+
+            }else if(usuario.setFase() == 2)
+            {
+
+                if (china.setCondicao())
+                {
+
+                    tailandia.mudarPonto();
+                    Score += 10;
+
+                }else
+                {
+
+                    caminhoErrado();
+
+                }
+
             }
 
         }
@@ -303,8 +456,6 @@ namespace projetoJogo1
                     australia.mudarPonto();
                     Score += 20;
                     MessageBox.Show("Parabéns !!!! \nVocê ganhou a primeira fase");
-                    MessageBox.Show("Sua pontuação é: " + Score);
-                    usuario.getScore(Score);
                     usuario.getFase(2);
 
                     /*
@@ -317,9 +468,31 @@ namespace projetoJogo1
                 }
                 else
                 {
-                    MessageBox.Show("Caminho errado");
-                    Score -= 10;
+                    caminhoErrado();
                 }
+
+            }else if(usuario.setFase() == 2)
+            {
+
+                if (tailandia.setCondicao())
+                {
+
+                    australia.mudarPonto();
+                    Score += 10;
+                    MessageBox.Show("Parabéns !!!! \nVocê ganhou a segunda fase");
+
+                    usuario.getScore(Score);
+
+                    MessageBox.Show("Sua pontuação foi " + usuario.setScore());
+
+                }
+                else
+                {
+
+                     caminhoErrado();
+
+                }
+
             }
 
         }
@@ -328,8 +501,38 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
-                MessageBox.Show("Caminho errado");
-                Score -= 10;
+                if (africaCentral.setCondicao())
+                {
+
+                    africaSul.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
+
+            }
+            else if(usuario.setFase() == 2)
+            {
+
+                if (africaCentral.setCondicao() && !usa_leste.setCondicao())
+                {
+
+                    africaSul.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
+
             }
         }
 
@@ -337,8 +540,36 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
-                MessageBox.Show("Caminho errado");
-                Score -= 10;
+                if (europaOeste.setCondicao())
+                {
+
+                    africaCentral.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
+
+            }
+            else if (usuario.setFase() == 2)
+            {
+                if (europaOeste.setCondicao())
+                {
+
+                    africaCentral.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
             }
         }
 
@@ -347,8 +578,19 @@ namespace projetoJogo1
             if (usuario.setFase() == 1)
             {
 
-                MessageBox.Show("Caminho errado");
-                Score -= 10;
+                if(usa_leste.setCondicao() && !usa_oeste.setCondicao())
+                {
+
+                    europaOeste.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
 
             }else if(usuario.setFase() == 2)
             {
@@ -356,14 +598,14 @@ namespace projetoJogo1
                 if (unitedKingdom.setCondicao())
                 {
 
-                    unitedKingdom.mudarPonto();
+                    europaOeste.mudarPonto();
                     Score += 10;
 
                 }
                 else
                 {
 
-                    MessageBox.Show("Ache o caminho certo");
+                    caminhoErrado();
 
                 }
 
@@ -374,8 +616,13 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
-                MessageBox.Show("Caminho errado");
-                Score -= 10;
+                caminhoErrado();
+            }
+            else if (usuario.setFase() == 2)
+            {
+
+                caminhoErrado();
+
             }
         }
 
@@ -383,10 +630,10 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
-                MessageBox.Show("Caminho errado");
-                Score -= 10;
+                caminhoErrado();
 
-            }else if (usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
                 unitedKingdom.mudarPonto();
@@ -399,8 +646,37 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
-                MessageBox.Show("Caminho errado");
-                Score -= 10;
+                if (africaSul.setCondicao())
+                {
+
+                    india.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
+
+            }
+            else if(usuario.setFase() == 2)
+            {
+
+                if (africaSul.setCondicao())
+                {
+
+                    india.mudarPonto();
+
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
+
             }
         }
 

@@ -24,3 +24,16 @@ C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.c
 C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.csproj.CoreCompileInputs.cache
 C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.exe
 C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.pdb
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.csprojAssemblyReference.cache
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.Apresentacao.resources
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.Form_Principal.resources
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.FormJogo.resources
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.Properties.Resources.resources
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.csproj.GenerateResource.cache
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.csproj.CoreCompileInputs.cache
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.exe
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.pdb
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\bin\Debug\projetoJogo1.exe.config
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\bin\Debug\projetoJogo1.exe
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\bin\Debug\projetoJogo1.pdb
+C:\Users\manager\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.MensagemBox.resources
