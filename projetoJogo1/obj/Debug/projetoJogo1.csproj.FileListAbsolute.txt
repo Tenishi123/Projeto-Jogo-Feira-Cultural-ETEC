@@ -9,3 +9,4 @@ C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.c
 C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.csproj.CoreCompileInputs.cache
 C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.exe
 C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.pdb
+C:\Users\Tenishi\source\repos\projetoJogo1\projetoJogo1\obj\Debug\projetoJogo1.FormJogo.resources

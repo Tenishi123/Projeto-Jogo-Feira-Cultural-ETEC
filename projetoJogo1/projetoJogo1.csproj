@@ -72,19 +72,23 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormJogo.resx">
+      <DependentUpon>FormJogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -93,6 +97,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pontoNetIcone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapa-mundi-colorir-paises-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servidorIcone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pcIcone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conexaoSaoPaulo_Bahia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conexaoSaoPaulo_Bahia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pontoNetIcone2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
