@@ -48,6 +48,8 @@
             this.pctSaoPaulo = new System.Windows.Forms.PictureBox();
             this.pctFundo = new System.Windows.Forms.PictureBox();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.pctServidorPrincipal1 = new System.Windows.Forms.PictureBox();
+            this.pctUsuario1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctTailandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAustralia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctJapao)).BeginInit();
@@ -66,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSaoPaulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctFundo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUsuario1)).BeginInit();
             this.SuspendLayout();
             // 
             // pctTailandia
@@ -251,7 +255,7 @@
             // 
             this.pctServidorPrincipal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctServidorPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("pctServidorPrincipal.Image")));
-            this.pctServidorPrincipal.Location = new System.Drawing.Point(282, 421);
+            this.pctServidorPrincipal.Location = new System.Drawing.Point(288, 441);
             this.pctServidorPrincipal.Name = "pctServidorPrincipal";
             this.pctServidorPrincipal.Size = new System.Drawing.Size(30, 28);
             this.pctServidorPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -297,6 +301,30 @@
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
+            // pctServidorPrincipal1
+            // 
+            this.pctServidorPrincipal1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctServidorPrincipal1.Image = ((System.Drawing.Image)(resources.GetObject("pctServidorPrincipal1.Image")));
+            this.pctServidorPrincipal1.Location = new System.Drawing.Point(467, 70);
+            this.pctServidorPrincipal1.Name = "pctServidorPrincipal1";
+            this.pctServidorPrincipal1.Size = new System.Drawing.Size(30, 28);
+            this.pctServidorPrincipal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctServidorPrincipal1.TabIndex = 19;
+            this.pctServidorPrincipal1.TabStop = false;
+            this.pctServidorPrincipal1.Visible = false;
+            // 
+            // pctUsuario1
+            // 
+            this.pctUsuario1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctUsuario1.Image = ((System.Drawing.Image)(resources.GetObject("pctUsuario1.Image")));
+            this.pctUsuario1.Location = new System.Drawing.Point(188, 195);
+            this.pctUsuario1.Name = "pctUsuario1";
+            this.pctUsuario1.Size = new System.Drawing.Size(34, 28);
+            this.pctUsuario1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctUsuario1.TabIndex = 20;
+            this.pctUsuario1.TabStop = false;
+            this.pctUsuario1.Visible = false;
+            // 
             // FormJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +332,8 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1088, 611);
             this.ControlBox = false;
+            this.Controls.Add(this.pctUsuario1);
+            this.Controls.Add(this.pctServidorPrincipal1);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.pctTailandia);
             this.Controls.Add(this.pctAustralia);
@@ -345,6 +375,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSaoPaulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctFundo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUsuario1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,5 +402,7 @@
         private System.Windows.Forms.PictureBox pctAustralia;
         private System.Windows.Forms.PictureBox pctTailandia;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.PictureBox pctServidorPrincipal1;
+        private System.Windows.Forms.PictureBox pctUsuario1;
     }
 }

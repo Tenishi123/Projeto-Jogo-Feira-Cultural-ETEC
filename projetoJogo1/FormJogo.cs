@@ -253,7 +253,17 @@ namespace projetoJogo1
         private void FormJogo_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+            //atalho para passar de fase
+
+            if (saoPaulo.setCondicao() && e.KeyChar.Equals(Keys.E))
+            {
+
+                tailandia.getCondicao(true);
+                PctAustralia_Click(sender, e);
+
+            }
 
         }
+
     }
 }
