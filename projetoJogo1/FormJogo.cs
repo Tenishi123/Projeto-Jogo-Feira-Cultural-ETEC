@@ -23,6 +23,10 @@ namespace projetoJogo1
         China china = new China();
         Tailandia tailandia = new Tailandia();
         Australia australia = new Australia();
+        UnitedKingdom unitedKingdom = new UnitedKingdom();
+        AfricaCentral africaCentral = new AfricaCentral();
+        AfricaSul africaSul = new AfricaSul();
+        India india = new India();
         Usuario usuario = new Usuario();
 
         public FormJogo()
@@ -30,28 +34,41 @@ namespace projetoJogo1
             InitializeComponent();
         }
 
-        private void PctBahia_Click(object sender, EventArgs e)
+        /***
+        * minhas funções
+         ***/
+
+        private void reset()// reseta todos os pontos para proxima fase
         {
 
-            if (saoPaulo.setCondicao())
-            {
-                bahia.mudarPonto();
-                Score += 10;
-            }
-            else
-            {
-                MessageBox.Show("Faça o caminho correto");
-                Score -= 10;
-            }
+            saoPaulo = new SaoPaulo();
+            bahia = new Bahia();
+            caribe = new Caribe();
+            usa_leste = new USA_Leste();
+            usa_oeste = new USA_Oeste();
+            japao = new Japao();
+            china = new China();
+            tailandia = new Tailandia();
+            australia = new Australia();
+            unitedKingdom = new UnitedKingdom();
+            africaCentral = new AfricaCentral();
+            africaSul = new AfricaSul();
+            india = new India();
 
-        }
+            saoPaulo.getCondicao(true);
+            bahia.getCondicao(true);
+            caribe.getCondicao(true);
+            usa_leste.getCondicao(true);
+            usa_oeste.getCondicao(true);
+            japao.getCondicao(true);
+            china.getCondicao(true);
+            tailandia.getCondicao(true);
+            australia.getCondicao(true);
+            unitedKingdom.getCondicao(true);
+            africaCentral.getCondicao(true);
+            africaSul.getCondicao(true);
+            india.getCondicao(true);
 
-        private void FormJogo_Load(object sender, EventArgs e)
-        {
-
-            pctFundo.Height = this.Height;
-            pctFundo.Width = this.Width;//Ajuste de tamanho da imagem com a tela
-            
             saoPaulo.get_pct(pctSaoPaulo);
             bahia.get_pct(pctBahia);
             caribe.get_pct(pctCaribe);
@@ -61,15 +78,98 @@ namespace projetoJogo1
             china.get_pct(pctChina);
             tailandia.get_pct(pctTailandia);
             australia.get_pct(pctAustralia);
-            
+            unitedKingdom.get_pct(pct_UnitedKingdom);
+            africaCentral.get_pct(pctAfricaCenter);
+            africaSul.get_pct(pctAfricaSul);
+            india.get_pct(pctIndia);
+
+            saoPaulo.mudarPonto();
+            bahia.mudarPonto();
+            caribe.mudarPonto();
+            usa_leste.mudarPonto();
+            usa_oeste.mudarPonto();
+            japao.mudarPonto();
+            china.mudarPonto();
+            tailandia.mudarPonto();
+            australia.mudarPonto();
+            unitedKingdom.mudarPonto();
+            africaCentral.mudarPonto();
+            africaSul.mudarPonto();
+            india.mudarPonto();
+
+        }
+
+        private void LoadFase()
+        {
+
+            if(usuario.setFase() == 1)
+            {
+
+                pctUsuario.Visible = true;
+                pctUsuario1.Visible = false;
+                pctServidorPrincipal.Visible = true;
+                pctServidorPrincipal1.Visible = false;
+                pctServidorSecundario.Visible = false;
+
+                reset();
+
+            }
+            else if(usuario.setFase() == 2)
+            {
+
+                pctUsuario.Visible = true;
+                pctUsuario1.Visible = false;
+                pctServidorPrincipal.Visible = false;
+                pctServidorPrincipal1.Visible = true;
+                pctServidorSecundario.Visible = true;
+
+                reset();
+
+            }
+
+        }
+
+        /***
+        * minhas funções
+        ***/
+        private void PctBahia_Click(object sender, EventArgs e)
+        {
+
+            if (usuario.setFase() == 1)
+            {
+                if (saoPaulo.setCondicao())
+                {
+                    bahia.mudarPonto();
+                    Score += 10;
+                }
+                else
+                {
+                    MessageBox.Show("Faça o caminho correto");
+                    Score -= 10;
+                }
+            }
+
+        }
+
+        private void FormJogo_Load(object sender, EventArgs e)
+        {
+
+            pctFundo.Height = this.Height;
+            pctFundo.Width = this.Width;//Ajuste de tamanho da imagem com a tela
+
+            usuario.getFase(1);//passa a primeira fase
+
+            reset();
             
         }
 
         private void PctSaoPaulo_Click(object sender, EventArgs e)
         {
-
-            saoPaulo.mudarPonto();
-            Score += 10;
+            if (usuario.setFase() == 1)
+            {
+                saoPaulo.mudarPonto();
+                Score += 10;
+            }
 
         }
 
@@ -80,189 +180,228 @@ namespace projetoJogo1
 
         private void PctCaribe_Click(object sender, EventArgs e)
         {
+            if (usuario.setFase() == 1)
+            {
+                if (bahia.setCondicao())
+                {
 
-            if (bahia.setCondicao())
+                    caribe.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+                    MessageBox.Show("Faça o caminho correto");
+                    Score -= 10;
+                }
+
+            }else if(usuario.setFase() == 2)
             {
 
-                caribe.mudarPonto();
-                Score += 10;
+
 
             }
-            else
-            {
-                MessageBox.Show("Faça o caminho correto");
-                Score -= 10;
-            }
-
         }
 
         private void Pct_USA_Leste_Click(object sender, EventArgs e)
         {
-
-            if (caribe.setCondicao())
+            if (usuario.setFase() == 1)
             {
-                usa_leste.mudarPonto();
-                Score += 10;
-            }
-            else
-            {
-                MessageBox.Show("Faça o caminho correto");
-                Score -= 10;
+                if (caribe.setCondicao())
+                {
+                    usa_leste.mudarPonto();
+                    Score += 10;
+                }
+                else
+                {
+                    MessageBox.Show("Faça o caminho correto");
+                    Score -= 10;
+                }
             }
 
         }
 
         private void Pct_USA_Oeste_Click(object sender, EventArgs e)
         {
-
-            if (usa_leste.setCondicao())
+            if (usuario.setFase() == 1)
             {
-                usa_oeste.mudarPonto();
-                Score += 10;
-            }
-            else
-            {
-                MessageBox.Show("Faça o caminho correto");
-                Score -= 10;
+                if (usa_leste.setCondicao())
+                {
+                    usa_oeste.mudarPonto();
+                    Score += 10;
+                }
+                else
+                {
+                    MessageBox.Show("Faça o caminho correto");
+                    Score -= 10;
+                }
             }
 
         }
 
         private void PctJapao_Click(object sender, EventArgs e)
         {
-
-            if (usa_oeste.setCondicao())
+            if (usuario.setFase() == 1)
             {
-                japao.mudarPonto();
-                Score += 10;
-            }
-            else
-            {
-                MessageBox.Show("Faça o caminho correto");
-                Score -= 10;
+                if (usa_oeste.setCondicao())
+                {
+                    japao.mudarPonto();
+                    Score += 10;
+                }
+                else
+                {
+                    MessageBox.Show("Faça o caminho correto");
+                    Score -= 10;
+                }
             }
 
         }
 
         private void PctChina_Click(object sender, EventArgs e)
         {
-
-            if (japao.setCondicao())
+            if (usuario.setFase() == 1)
             {
-                china.mudarPonto();
-                Score += 10;
-            }
-            else
-            {
-                MessageBox.Show("Faça o caminho correto");
-                Score -= 10;
+                if (japao.setCondicao())
+                {
+                    china.mudarPonto();
+                    Score += 10;
+                }
+                else
+                {
+                    MessageBox.Show("Faça o caminho correto");
+                    Score -= 10;
+                }
             }
 
         }
 
         private void PctTailandia_Click(object sender, EventArgs e)
         {
-
-            if (china.setCondicao())
+            if (usuario.setFase() == 1)
             {
-                tailandia.mudarPonto();
-                Score += 10;
-            }
-            else
-            {
-                MessageBox.Show("Faça o caminho correto");
-                Score -= 10;
+                if (china.setCondicao())
+                {
+                    tailandia.mudarPonto();
+                    Score += 10;
+                }
+                else
+                {
+                    MessageBox.Show("Faça o caminho correto");
+                    Score -= 10;
+                }
             }
 
         }
 
         private void PctAustralia_Click(object sender, EventArgs e)
         {
-
-            if (tailandia.setCondicao())
+            if (usuario.setFase() == 1)
             {
+                if (tailandia.setCondicao() || saoPaulo.setCondicao())//atalho da fase - desativar quando pronto
+                {
 
-                australia.mudarPonto();
-                Score += 20;
-                MessageBox.Show("Parabéns !!!! \nVocê ganhou a primeira fase");
-                MessageBox.Show("Sua pontuação é: " + Score);
-                usuario.getScore(Score);
+                    australia.mudarPonto();
+                    Score += 20;
+                    MessageBox.Show("Parabéns !!!! \nVocê ganhou a primeira fase");
+                    MessageBox.Show("Sua pontuação é: " + Score);
+                    usuario.getScore(Score);
+                    usuario.getFase(2);
 
-                Hide();
+                    /*
+                    Apresentacao2 apresentacao2 = new Apresentacao2();
+                    apresentacao2.ShowDialog();
+                    */
 
-                Apresentacao2 apresentacao2 = new Apresentacao2();
-                apresentacao2.ShowDialog();
+                    LoadFase();
 
-            }
-            else
-            {
-                MessageBox.Show("Caminho errado");
-                Score -= 10;
+                }
+                else
+                {
+                    MessageBox.Show("Caminho errado");
+                    Score -= 10;
+                }
             }
 
         }
 
         private void PctAfricaSul_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Caminho errado");
-            Score -= 10;
-
+            if (usuario.setFase() == 1)
+            {
+                MessageBox.Show("Caminho errado");
+                Score -= 10;
+            }
         }
 
         private void PctAfricaCenter_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Caminho errado");
-            Score -= 10;
-
+            if (usuario.setFase() == 1)
+            {
+                MessageBox.Show("Caminho errado");
+                Score -= 10;
+            }
         }
 
         private void PctEuropaOeste_Click(object sender, EventArgs e)
         {
+            if (usuario.setFase() == 1)
+            {
 
-            MessageBox.Show("Caminho errado");
-            Score -= 10;
+                MessageBox.Show("Caminho errado");
+                Score -= 10;
 
+            }else if(usuario.setFase() == 2)
+            {
+
+                if (unitedKingdom.setCondicao())
+                {
+
+                    unitedKingdom.mudarPonto();
+                    Score += 10;
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Ache o caminho certo");
+
+                }
+
+            }
         }
 
         private void PctEuropaLeste_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Caminho errado");
-            Score -= 10;
-
+            if (usuario.setFase() == 1)
+            {
+                MessageBox.Show("Caminho errado");
+                Score -= 10;
+            }
         }
 
         private void Pct_UnitedKingdom_Click(object sender, EventArgs e)
         {
+            if (usuario.setFase() == 1)
+            {
+                MessageBox.Show("Caminho errado");
+                Score -= 10;
 
-            MessageBox.Show("Caminho errado");
-            Score -= 10;
+            }else if (usuario.setFase() == 2)
+            {
 
+                unitedKingdom.mudarPonto();
+                Score += 10;
+
+            }
         }
 
         private void PctIndia_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Caminho errado");
-            Score -= 10;
-
-        }
-
-        private void FormJogo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            //atalho para passar de fase
-
-            if (saoPaulo.setCondicao() && e.KeyChar.Equals(Keys.E))
+            if (usuario.setFase() == 1)
             {
-
-                tailandia.getCondicao(true);
-                PctAustralia_Click(sender, e);
-
+                MessageBox.Show("Caminho errado");
+                Score -= 10;
             }
-
         }
 
     }

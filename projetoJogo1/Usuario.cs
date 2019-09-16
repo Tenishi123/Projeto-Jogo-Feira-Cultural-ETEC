@@ -9,8 +9,9 @@ namespace projetoJogo1
     class Usuario
     {
 
-        String nome;
-        int Score;
+        protected String nome;
+        protected int Score;
+        protected int fase;
 
         public String setNome()
         {
@@ -35,6 +36,20 @@ namespace projetoJogo1
             Score = parScore;
 
         }
+
+        public int setFase()
+        {
+            return fase;
+        }
+
+        public void getFase(int parFase)
+        {
+
+            fase = parFase;
+
+        }
+
+
 
     }
 }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace projetoJogo1
 {
-    public class SaoPaulo : pontos
+    class India:pontos
     {
     }
-
 }

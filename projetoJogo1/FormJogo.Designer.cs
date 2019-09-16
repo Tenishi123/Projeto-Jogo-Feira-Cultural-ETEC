@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJogo));
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.pctUsuario1 = new System.Windows.Forms.PictureBox();
+            this.pctServidorPrincipal1 = new System.Windows.Forms.PictureBox();
             this.pctTailandia = new System.Windows.Forms.PictureBox();
             this.pctAustralia = new System.Windows.Forms.PictureBox();
             this.pctJapao = new System.Windows.Forms.PictureBox();
@@ -47,9 +50,9 @@
             this.pctServidorPrincipal = new System.Windows.Forms.PictureBox();
             this.pctSaoPaulo = new System.Windows.Forms.PictureBox();
             this.pctFundo = new System.Windows.Forms.PictureBox();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.pctServidorPrincipal1 = new System.Windows.Forms.PictureBox();
-            this.pctUsuario1 = new System.Windows.Forms.PictureBox();
+            this.pctServidorSecundario = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUsuario1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTailandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAustralia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctJapao)).BeginInit();
@@ -68,9 +71,48 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSaoPaulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctFundo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctUsuario1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctServidorSecundario)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechar.Location = new System.Drawing.Point(1042, -3);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(46, 41);
+            this.btnFechar.TabIndex = 18;
+            this.btnFechar.Text = "X";
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
+            // 
+            // pctUsuario1
+            // 
+            this.pctUsuario1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctUsuario1.Image = ((System.Drawing.Image)(resources.GetObject("pctUsuario1.Image")));
+            this.pctUsuario1.Location = new System.Drawing.Point(188, 195);
+            this.pctUsuario1.Name = "pctUsuario1";
+            this.pctUsuario1.Size = new System.Drawing.Size(34, 28);
+            this.pctUsuario1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctUsuario1.TabIndex = 20;
+            this.pctUsuario1.TabStop = false;
+            this.pctUsuario1.Visible = false;
+            // 
+            // pctServidorPrincipal1
+            // 
+            this.pctServidorPrincipal1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctServidorPrincipal1.Image = ((System.Drawing.Image)(resources.GetObject("pctServidorPrincipal1.Image")));
+            this.pctServidorPrincipal1.Location = new System.Drawing.Point(467, 70);
+            this.pctServidorPrincipal1.Name = "pctServidorPrincipal1";
+            this.pctServidorPrincipal1.Size = new System.Drawing.Size(30, 28);
+            this.pctServidorPrincipal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctServidorPrincipal1.TabIndex = 19;
+            this.pctServidorPrincipal1.TabStop = false;
+            this.pctServidorPrincipal1.Visible = false;
             // 
             // pctTailandia
             // 
@@ -285,45 +327,16 @@
             this.pctFundo.TabStop = false;
             this.pctFundo.WaitOnLoad = true;
             // 
-            // btnFechar
+            // pctServidorSecundario
             // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFechar.Location = new System.Drawing.Point(1042, -3);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(46, 41);
-            this.btnFechar.TabIndex = 18;
-            this.btnFechar.Text = "X";
-            this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
-            // 
-            // pctServidorPrincipal1
-            // 
-            this.pctServidorPrincipal1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pctServidorPrincipal1.Image = ((System.Drawing.Image)(resources.GetObject("pctServidorPrincipal1.Image")));
-            this.pctServidorPrincipal1.Location = new System.Drawing.Point(467, 70);
-            this.pctServidorPrincipal1.Name = "pctServidorPrincipal1";
-            this.pctServidorPrincipal1.Size = new System.Drawing.Size(30, 28);
-            this.pctServidorPrincipal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctServidorPrincipal1.TabIndex = 19;
-            this.pctServidorPrincipal1.TabStop = false;
-            this.pctServidorPrincipal1.Visible = false;
-            // 
-            // pctUsuario1
-            // 
-            this.pctUsuario1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pctUsuario1.Image = ((System.Drawing.Image)(resources.GetObject("pctUsuario1.Image")));
-            this.pctUsuario1.Location = new System.Drawing.Point(188, 195);
-            this.pctUsuario1.Name = "pctUsuario1";
-            this.pctUsuario1.Size = new System.Drawing.Size(34, 28);
-            this.pctUsuario1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctUsuario1.TabIndex = 20;
-            this.pctUsuario1.TabStop = false;
-            this.pctUsuario1.Visible = false;
+            this.pctServidorSecundario.Image = global::projetoJogo1.Properties.Resources._1;
+            this.pctServidorSecundario.Location = new System.Drawing.Point(775, 210);
+            this.pctServidorSecundario.Name = "pctServidorSecundario";
+            this.pctServidorSecundario.Size = new System.Drawing.Size(40, 36);
+            this.pctServidorSecundario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctServidorSecundario.TabIndex = 21;
+            this.pctServidorSecundario.TabStop = false;
+            this.pctServidorSecundario.Visible = false;
             // 
             // FormJogo
             // 
@@ -332,6 +345,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1088, 611);
             this.ControlBox = false;
+            this.Controls.Add(this.pctServidorSecundario);
             this.Controls.Add(this.pctUsuario1);
             this.Controls.Add(this.pctServidorPrincipal1);
             this.Controls.Add(this.btnFechar);
@@ -356,7 +370,8 @@
             this.Name = "FormJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormJogo_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormJogo_KeyPress);
+            ((System.ComponentModel.ISupportInitialize)(this.pctUsuario1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTailandia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAustralia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctJapao)).EndInit();
@@ -375,8 +390,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSaoPaulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctFundo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctServidorPrincipal1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctUsuario1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctServidorSecundario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,5 +418,6 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.PictureBox pctServidorPrincipal1;
         private System.Windows.Forms.PictureBox pctUsuario1;
+        private System.Windows.Forms.PictureBox pctServidorSecundario;
     }
 }
