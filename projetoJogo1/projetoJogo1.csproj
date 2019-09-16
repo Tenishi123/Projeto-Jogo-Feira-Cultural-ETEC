@@ -46,12 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfricaCentral.cs" />
+    <Compile Include="AfricaSul.cs" />
     <Compile Include="Apresentacao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Apresentacao.Designer.cs">
       <DependentUpon>Apresentacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao2.Designer.cs">
+      <DependentUpon>Apresentacao2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Australia.cs" />
+    <Compile Include="Bahia.cs" />
+    <Compile Include="Caribe.cs" />
+    <Compile Include="China.cs" />
+    <Compile Include="EuropaLeste.cs" />
+    <Compile Include="EuropaOeste.cs" />
     <Compile Include="FormJogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,10 +78,21 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Japao.cs" />
+    <Compile Include="Pontos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaoPaulo.cs" />
+    <Compile Include="Tailandia.cs" />
+    <Compile Include="UnitedKingdom.cs" />
+    <Compile Include="USA_Leste.cs" />
+    <Compile Include="USA_Oeste.cs" />
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Apresentacao.resx">
       <DependentUpon>Apresentacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao2.resx">
+      <DependentUpon>Apresentacao2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

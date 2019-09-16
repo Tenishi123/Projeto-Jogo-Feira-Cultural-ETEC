@@ -36,6 +36,8 @@
             // btnProApresentacao
             // 
             this.btnProApresentacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProApresentacao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProApresentacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProApresentacao.Location = new System.Drawing.Point(661, 426);
             this.btnProApresentacao.Name = "btnProApresentacao";
             this.btnProApresentacao.Size = new System.Drawing.Size(232, 56);
@@ -47,6 +49,8 @@
             // btnAnApresentacao
             // 
             this.btnAnApresentacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAnApresentacao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAnApresentacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnApresentacao.Location = new System.Drawing.Point(12, 426);
             this.btnAnApresentacao.Name = "btnAnApresentacao";
             this.btnAnApresentacao.Size = new System.Drawing.Size(232, 56);

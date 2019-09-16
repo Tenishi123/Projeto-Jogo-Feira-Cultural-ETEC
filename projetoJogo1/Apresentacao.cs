@@ -40,7 +40,9 @@ namespace projetoJogo1
             }else if(estadoDaJanela == 3)
             {
 
-                Hide();
+                lblMengsApresentacao.Visible = false;
+                btnAnApresentacao.Visible = false;
+                btnProApresentacao.Visible = false;
 
                 FormJogo formJogo = new FormJogo();
                 formJogo.ShowDialog();
