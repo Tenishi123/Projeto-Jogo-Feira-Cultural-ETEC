@@ -69,11 +69,11 @@
             // 
             this.lblMengsApresentacao.AutoSize = true;
             this.lblMengsApresentacao.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMengsApresentacao.Font = new System.Drawing.Font("OCR-A BT", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMengsApresentacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMengsApresentacao.ForeColor = System.Drawing.Color.Lime;
-            this.lblMengsApresentacao.Location = new System.Drawing.Point(145, 182);
+            this.lblMengsApresentacao.Location = new System.Drawing.Point(68, 180);
             this.lblMengsApresentacao.Name = "lblMengsApresentacao";
-            this.lblMengsApresentacao.Size = new System.Drawing.Size(622, 47);
+            this.lblMengsApresentacao.Size = new System.Drawing.Size(570, 51);
             this.lblMengsApresentacao.TabIndex = 2;
             this.lblMengsApresentacao.Text = "Bem vindo ao Jogo da NET";
             this.lblMengsApresentacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

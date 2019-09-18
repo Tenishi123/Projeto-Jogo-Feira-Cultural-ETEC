@@ -80,6 +80,8 @@
     <Compile Include="MensagemBox.Designer.cs">
       <DependentUpon>MensagemBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ponto1DEMO.cs" />
+    <Compile Include="Ponto2DEMO.cs" />
     <Compile Include="Pontos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -450,18 +450,13 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
-                if (tailandia.setCondicao() || saoPaulo.setCondicao())//atalho da fase - desativar quando pronto
+                if (tailandia.setCondicao())
                 {
 
                     australia.mudarPonto();
                     Score += 20;
                     MessageBox.Show("Parabéns !!!! \nVocê ganhou a primeira fase");
                     usuario.getFase(2);
-
-                    /*
-                    Apresentacao2 apresentacao2 = new Apresentacao2();
-                    apresentacao2.ShowDialog();
-                    */
 
                     LoadFase();
 
