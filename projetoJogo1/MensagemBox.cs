@@ -28,6 +28,11 @@ namespace projetoJogo1
             btnJogar.Visible = false;
             ponto1.get_pct(pctPonto1);
             ponto2.get_pct(pctPonto2);
+            ponto1.getCondicao(true);
+            ponto2.getCondicao(true);
+            ponto1.mudarPonto();
+            ponto2.mudarPonto();
+
 
         }
 
@@ -42,6 +47,7 @@ namespace projetoJogo1
         {
 
             ponto1.mudarPonto();
+            ponto1.getBloquedo(true);
 
         }
 
@@ -67,6 +73,16 @@ namespace projetoJogo1
         private void BtnJogar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PctUsuario1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

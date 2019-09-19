@@ -11,12 +11,15 @@ namespace projetoJogo1
     public class pontos
     {
 
-        bool condicao = false;
+        bool condicao = false, bloquedo = false;
         PictureBox pct;
 
         public void getCondicao(bool parCondicao)
         {
-            condicao = parCondicao;
+            if (!bloquedo)
+            {
+                condicao = parCondicao;
+            }
         }
 
         public void get_pct(PictureBox par_pct)
@@ -31,24 +34,40 @@ namespace projetoJogo1
             return condicao;
         }
 
-        public void mudarPonto()
+        public void getBloquedo(bool parBloqueado)
         {
 
-            if (condicao)
+            bloquedo = parBloqueado;
+
+        }
+
+        public bool setBloqueado()
+        {
+
+            return bloquedo;
+
+        }
+
+        public void mudarPonto()
+        {
+            if (!bloquedo)
             {
+                if (condicao)
+                {
 
-                condicao = false;
-                Image SprintPonto = Properties.Resources.pontoNetIcone;
-                pct.Image = SprintPonto;
+                    condicao = false;
+                    Image SprintPonto = Properties.Resources.pontoNetIcone2;
+                    pct.Image = SprintPonto;
 
-            }
-            else
-            {
+                }
+                else
+                {
 
-                condicao = true;
-                Image SprintPonto = Properties.Resources.pontoNetIcone2;
-                pct.Image = SprintPonto;
+                    condicao = true;
+                    Image SprintPonto = Properties.Resources.pontoNetIcone;
+                    pct.Image = SprintPonto;
 
+                }
             }
         }
 

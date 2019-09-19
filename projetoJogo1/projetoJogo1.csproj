@@ -136,9 +136,6 @@
     <None Include="Resources\servidorIcone.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pcIcone.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\conexaoSaoPaulo_Bahia.png" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +143,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pontoNetIcone2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pontoNetIcone.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servidorIcone.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GIF-190919_165351.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GIF-190919_1653511.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-09-19_17.08.59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-09-19_17.08.591.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

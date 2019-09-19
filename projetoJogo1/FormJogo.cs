@@ -46,20 +46,23 @@ namespace projetoJogo1
         private void caminhoErrado()
         {
 
-            int numRand = rand.Next(1,4);
+            int numRand = rand.Next(1, 4);
 
-            if (numRand == 1) {
+            if (numRand == 1)
+            {
 
                 MessageBox.Show("Caminho errado");
                 Score -= 10;
-            
-            }else if(numRand == 2)
+
+            }
+            else if (numRand == 2)
             {
 
                 MessageBox.Show("Escolha o caminho certo !!!");
                 Score -= 10;
 
-            }else if (numRand == 3)
+            }
+            else if (numRand == 3)
             {
 
                 MessageBox.Show("Escolha outro caminho");
@@ -74,22 +77,24 @@ namespace projetoJogo1
 
             erros++;
 
-            if(erros == 4 || erros == 7)
+            if (erros == 4 || erros == 7)
             {
 
-                if(usuario.setFase() == 1)
+                if (usuario.setFase() == 1)
                 {
 
                     MessageBox.Show("Clique nos pontos até chegar no computador");
 
-                }else if(usuario.setFase() == 2)
+                }
+                else if (usuario.setFase() == 2)
                 {
 
                     MessageBox.Show("Clique nos pontos até chegar no servidor 2 e depois para o computador");
 
                 }
 
-            }else if(erros == 10)
+            }
+            else if (erros == 10)
             {
 
                 MessageBox.Show("Game over");
@@ -132,6 +137,22 @@ namespace projetoJogo1
             europaLeste.getCondicao(true);
             europaOeste.getCondicao(true);
 
+            saoPaulo.getBloquedo(false);
+            bahia.getBloquedo(false);
+            caribe.getBloquedo(false);
+            usa_leste.getBloquedo(false);
+            usa_oeste.getBloquedo(false);
+            japao.getBloquedo(false);
+            china.getBloquedo(false);
+            tailandia.getBloquedo(false);
+            australia.getBloquedo(false);
+            unitedKingdom.getBloquedo(false);
+            africaCentral.getBloquedo(false);
+            africaSul.getBloquedo(false);
+            india.getBloquedo(false);
+            europaLeste.getBloquedo(false);
+            europaOeste.getBloquedo(false);
+
             saoPaulo.get_pct(pctSaoPaulo);
             bahia.get_pct(pctBahia);
             caribe.get_pct(pctCaribe);
@@ -169,11 +190,10 @@ namespace projetoJogo1
         private void LoadFase()
         {
 
-            if(usuario.setFase() == 1)
+            if (usuario.setFase() == 1)
             {
 
                 pctUsuario.Visible = true;
-                pctUsuario1.Visible = false;
                 pctServidorPrincipal.Visible = true;
                 pctServidorPrincipal1.Visible = false;
                 pctServidorPrincipal.Visible = false;
@@ -182,11 +202,10 @@ namespace projetoJogo1
                 reset();
 
             }
-            else if(usuario.setFase() == 2)
+            else if (usuario.setFase() == 2)
             {
 
                 pctUsuario.Visible = true;
-                pctUsuario1.Visible = false;
                 pctServidorPrincipal.Visible = false;
                 pctServidorPrincipal1.Visible = true;
                 pctServidorSecundario_1.Visible = true;
@@ -214,7 +233,8 @@ namespace projetoJogo1
                 {
                     caminhoErrado();
                 }
-            }else if(usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
                 caminhoErrado();
@@ -235,7 +255,7 @@ namespace projetoJogo1
 
             MensagemBox mb = new MensagemBox();
             mb.ShowDialog();
-            
+
         }
 
         private void PctSaoPaulo_Click(object sender, EventArgs e)
@@ -244,6 +264,7 @@ namespace projetoJogo1
             {
                 saoPaulo.mudarPonto();
                 Score += 10;
+                saoPaulo.getBloquedo(true);
             }
             else if (usuario.setFase() == 2)
             {
@@ -286,6 +307,7 @@ namespace projetoJogo1
 
         private void Pct_USA_Leste_Click(object sender, EventArgs e)
         {
+
             if (usuario.setFase() == 1)
             {
                 if (caribe.setCondicao())
@@ -297,14 +319,16 @@ namespace projetoJogo1
                 {
                     caminhoErrado();
                 }
-            }else if(usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
-                if (europaOeste.setCondicao() && !africaSul.setCondicao())
+                if (europaOeste.setCondicao() && !africaCentral.setCondicao())
                 {
 
                     usa_leste.mudarPonto();
                     Score += 10;
+                    usa_leste.getBloquedo(true);
 
                 }
                 else
@@ -322,16 +346,19 @@ namespace projetoJogo1
         {
             if (usuario.setFase() == 1)
             {
-                if (usa_leste.setCondicao() && !africaCentral.setCondicao())
+                if (usa_leste.setCondicao() && !europaOeste.setCondicao())
                 {
+                    europaOeste.getBloquedo(true);
                     usa_oeste.mudarPonto();
                     Score += 10;
+                    usa_oeste.getBloquedo(true);
                 }
                 else
                 {
                     caminhoErrado();
                 }
-            }else if(usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
                 if (usa_leste.setCondicao())
@@ -361,7 +388,8 @@ namespace projetoJogo1
                 {
                     caminhoErrado();
                 }
-            }else if(usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
                 if (usa_oeste.setCondicao())
@@ -392,7 +420,8 @@ namespace projetoJogo1
                     caminhoErrado();
                 }
 
-            }else if( usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
                 if (india.setCondicao() || japao.setCondicao())
@@ -401,7 +430,8 @@ namespace projetoJogo1
                     reset();
                     china.mudarPonto();
 
-                }else
+                }
+                else
                 {
 
                     caminhoErrado();
@@ -426,16 +456,18 @@ namespace projetoJogo1
                     caminhoErrado();
                 }
 
-            }else if(usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
-                if (china.setCondicao())
+                if (india.setCondicao())
                 {
 
                     tailandia.mudarPonto();
                     Score += 10;
 
-                }else
+                }
+                else
                 {
 
                     caminhoErrado();
@@ -466,7 +498,8 @@ namespace projetoJogo1
                     caminhoErrado();
                 }
 
-            }else if(usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
                 if (tailandia.setCondicao())
@@ -479,12 +512,13 @@ namespace projetoJogo1
                     usuario.getScore(Score);
 
                     MessageBox.Show("Sua pontuação foi " + usuario.setScore());
+                    Application.Exit();
 
                 }
                 else
                 {
 
-                     caminhoErrado();
+                    caminhoErrado();
 
                 }
 
@@ -511,10 +545,10 @@ namespace projetoJogo1
                 }
 
             }
-            else if(usuario.setFase() == 2)
+            else if (usuario.setFase() == 2)
             {
 
-                if (africaCentral.setCondicao() && !usa_leste.setCondicao())
+                if (africaCentral.setCondicao())
                 {
 
                     africaSul.mudarPonto();
@@ -552,11 +586,12 @@ namespace projetoJogo1
             }
             else if (usuario.setFase() == 2)
             {
-                if (europaOeste.setCondicao())
+                if (europaOeste.setCondicao() && !usa_leste.setCondicao())
                 {
 
                     africaCentral.mudarPonto();
                     Score += 10;
+                    africaCentral.getBloquedo(true);
 
                 }
                 else
@@ -565,6 +600,12 @@ namespace projetoJogo1
                     caminhoErrado();
 
                 }
+            }else if(usuario.setFase() == 2 && china.setCondicao())
+            {
+
+                africaCentral.mudarPonto();
+                Score += 10;
+
             }
         }
 
@@ -573,11 +614,12 @@ namespace projetoJogo1
             if (usuario.setFase() == 1)
             {
 
-                if(usa_leste.setCondicao() && !usa_oeste.setCondicao())
+                if (usa_leste.setCondicao() && !usa_oeste.setCondicao())
                 {
-
+                    usa_oeste.getBloquedo(true);
                     europaOeste.mudarPonto();
                     Score += 10;
+                    europaOeste.getBloquedo(true);
 
                 }
                 else
@@ -587,7 +629,8 @@ namespace projetoJogo1
 
                 }
 
-            }else if(usuario.setFase() == 2)
+            }
+            else if (usuario.setFase() == 2)
             {
 
                 if (unitedKingdom.setCondicao())
@@ -595,6 +638,7 @@ namespace projetoJogo1
 
                     europaOeste.mudarPonto();
                     Score += 10;
+                    europaOeste.getBloquedo(true);
 
                 }
                 else
@@ -631,8 +675,18 @@ namespace projetoJogo1
             else if (usuario.setFase() == 2)
             {
 
-                unitedKingdom.mudarPonto();
-                Score += 10;
+                if (!china.setCondicao())
+                {
+                    unitedKingdom.mudarPonto();
+                    Score += 10;
+                    unitedKingdom.getBloquedo(true);
+                }
+                else
+                {
+
+                    caminhoErrado();
+
+                }
 
             }
         }
@@ -656,13 +710,14 @@ namespace projetoJogo1
                 }
 
             }
-            else if(usuario.setFase() == 2)
+            else if (usuario.setFase() == 2)
             {
 
-                if (africaSul.setCondicao())
+                if (china.setCondicao() || africaSul.setCondicao())
                 {
 
                     india.mudarPonto();
+                    Score += 10;
 
                 }
                 else
@@ -674,6 +729,5 @@ namespace projetoJogo1
 
             }
         }
-
     }
 }

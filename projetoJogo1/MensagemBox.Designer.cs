@@ -32,14 +32,14 @@
             this.lblMensagem = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnJogar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pctPonto1 = new System.Windows.Forms.PictureBox();
-            this.pctPonto2 = new System.Windows.Forms.PictureBox();
             this.pctUsuario1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPonto1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPonto2)).BeginInit();
+            this.pctPonto2 = new System.Windows.Forms.PictureBox();
+            this.pctPonto1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctUsuario1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPonto2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPonto1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMensagem
@@ -77,7 +77,7 @@
             this.btnJogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJogar.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJogar.ForeColor = System.Drawing.Color.Lime;
-            this.btnJogar.Location = new System.Drawing.Point(237, 376);
+            this.btnJogar.Location = new System.Drawing.Point(222, 383);
             this.btnJogar.Name = "btnJogar";
             this.btnJogar.Size = new System.Drawing.Size(232, 56);
             this.btnJogar.TabIndex = 20;
@@ -85,31 +85,22 @@
             this.btnJogar.UseVisualStyleBackColor = false;
             this.btnJogar.Click += new System.EventHandler(this.BtnJogar_Click);
             // 
-            // pictureBox1
+            // pctUsuario1
             // 
-            this.pictureBox1.Image = global::projetoJogo1.Properties.Resources.servidorIcone;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 286);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pctPonto1
-            // 
-            this.pctPonto1.Image = global::projetoJogo1.Properties.Resources.pontoNetIcone;
-            this.pctPonto1.Location = new System.Drawing.Point(193, 286);
-            this.pctPonto1.Name = "pctPonto1";
-            this.pctPonto1.Size = new System.Drawing.Size(68, 67);
-            this.pctPonto1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctPonto1.TabIndex = 22;
-            this.pctPonto1.TabStop = false;
-            this.pctPonto1.Click += new System.EventHandler(this.PctPonto1_Click);
+            this.pctUsuario1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctUsuario1.Image = global::projetoJogo1.Properties.Resources._2019_09_19_17_08_59;
+            this.pctUsuario1.Location = new System.Drawing.Point(537, 286);
+            this.pctUsuario1.Name = "pctUsuario1";
+            this.pctUsuario1.Size = new System.Drawing.Size(64, 67);
+            this.pctUsuario1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctUsuario1.TabIndex = 26;
+            this.pctUsuario1.TabStop = false;
+            this.pctUsuario1.Click += new System.EventHandler(this.PctUsuario1_Click);
             // 
             // pctPonto2
             // 
-            this.pctPonto2.Image = global::projetoJogo1.Properties.Resources.pontoNetIcone;
-            this.pctPonto2.Location = new System.Drawing.Point(369, 286);
+            this.pctPonto2.Image = global::projetoJogo1.Properties.Resources.pontoNetIcone2;
+            this.pctPonto2.Location = new System.Drawing.Point(377, 286);
             this.pctPonto2.Name = "pctPonto2";
             this.pctPonto2.Size = new System.Drawing.Size(68, 67);
             this.pctPonto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,17 +108,27 @@
             this.pctPonto2.TabStop = false;
             this.pctPonto2.Click += new System.EventHandler(this.PctPonto2_Click);
             // 
-            // pctUsuario1
+            // pctPonto1
             // 
-            this.pctUsuario1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pctUsuario1.Image = ((System.Drawing.Image)(resources.GetObject("pctUsuario1.Image")));
-            this.pctUsuario1.Location = new System.Drawing.Point(537, 286);
-            this.pctUsuario1.Name = "pctUsuario1";
-            this.pctUsuario1.Size = new System.Drawing.Size(64, 67);
-            this.pctUsuario1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctUsuario1.TabIndex = 26;
-            this.pctUsuario1.TabStop = false;
-            this.pctUsuario1.Visible = false;
+            this.pctPonto1.Image = global::projetoJogo1.Properties.Resources.pontoNetIcone2;
+            this.pctPonto1.Location = new System.Drawing.Point(222, 286);
+            this.pctPonto1.Name = "pctPonto1";
+            this.pctPonto1.Size = new System.Drawing.Size(68, 67);
+            this.pctPonto1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctPonto1.TabIndex = 22;
+            this.pctPonto1.TabStop = false;
+            this.pctPonto1.Click += new System.EventHandler(this.PctPonto1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(57, 270);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // MensagemBox
             // 
@@ -146,10 +147,10 @@
             this.Name = "MensagemBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MensagemBox_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPonto1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPonto2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctUsuario1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPonto2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPonto1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
